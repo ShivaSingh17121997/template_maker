@@ -6,7 +6,7 @@
         <!-- Navigation Links (Desktop) -->
         <nav class="hidden md:flex space-x-6">
             <a routerLink="/" class="hover:text-gray-400">Home</a>
-            <a routerLink="/templates" class="hover:text-gray-400">Templates</a>
+            <a routerLink="/templets" class="hover:text-gray-400">Templates</a>
             <a routerLink="/resume-builder" class="hover:text-gray-400">Resume Builder</a>
             <a routerLink="/card-builder" class="hover:text-gray-400">Card Builder</a>
         </nav>
@@ -39,4 +39,8 @@
         <a routerLink="/resume-builder" class="block py-2 text-white hover:text-gray-400">Resume Builder</a>
         <a routerLink="/card-builder" class="block py-2 text-white hover:text-gray-400">Card Builder</a>
     </div>
-</header>
+
+  </header>
+  <div>
+    <router-outlet></router-outlet>
+  </div>

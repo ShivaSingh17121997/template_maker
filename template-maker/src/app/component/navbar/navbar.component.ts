@@ -4,7 +4,8 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule,RouterLink],
+  standalone: true,
+  imports: [CommonModule,RouterLink,RouterOutlet],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

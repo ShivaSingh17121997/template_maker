@@ -1,46 +1,51 @@
-<header class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 flex justify-between items-center py-4">
-        <!-- Logo -->
-        <a routerLink="/" class="text-2xl font-bold text-white">ResumeBuilder</a>
+<header class="bg-white shadow-md">
+  <div class="container mx-auto px-4 flex justify-between items-center py-4">
+    <!-- Logo -->
+    <a routerLink="/" class="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-all duration-300">
+      ResumeBuilder
+    </a>
 
-        <!-- Navigation Links (Desktop) -->
-        <nav class="hidden md:flex space-x-6">
-            <a routerLink="/" class="hover:text-gray-400">Home</a>
-            <a routerLink="/templets" class="hover:text-gray-400">Templates</a>
-            <a routerLink="/resume-builder" class="hover:text-gray-400">Resume Builder</a>
-            <a routerLink="/card-builder" class="hover:text-gray-400">Card Builder</a>
-        </nav>
+    <!-- Navigation Links (Desktop) -->
+    <nav class="hidden md:flex space-x-6">
+      <a routerLink="/" class="text-gray-800 hover:text-gray-500 transition-all duration-300">Home</a>
+      <a routerLink="/resume-builder" class="text-gray-800 hover:text-gray-500 transition-all duration-300">Resume Builder</a>
+      <a routerLink="/card-builder" class="text-gray-800 hover:text-gray-500 transition-all duration-300">Cards Builder</a>
+    </nav>
 
-        <!-- Right Section (Login + Dark Mode Toggle) -->
-        <div class="flex items-center space-x-4">
-            <button *ngIf="!isLoggedIn" routerLink="/login" class="bg-blue-500 px-4 py-2 rounded-md">
-          Login
-        </button>
-            <button *ngIf="isLoggedIn" (click)="logout()" class="bg-red-500 px-4 py-2 rounded-md">
-          Logout
-        </button>
+    <!-- Right Section (Login + Dark Mode Toggle) -->
+    <div class="flex items-center space-x-4">
+      <!-- Login Button -->
+      <button *ngIf="!isLoggedIn" routerLink="/login"
+        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all duration-300">
+        Login
+      </button>
 
-            <!-- Dark Mode Toggle -->
-            <button (click)="toggleTheme()" class="p-2 bg-gray-800 rounded-md">
-          🌞 / 🌙
-        </button>
+      <!-- Logout Button -->
+      <button *ngIf="isLoggedIn" (click)="logout()"
+        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-all duration-300">
+        Logout
+      </button>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button (click)="toggleMobileMenu()" class="md:hidden text-white">
-          ☰
-        </button>
-        </div>
+      <!-- Dark Mode Toggle -->
+      <button (click)="toggleTheme()" class="p-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-all duration-300">
+        🌞 / 🌙
+      </button>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button (click)="toggleMobileMenu()" class="md:hidden text-gray-800 text-2xl">
+        ☰
+      </button>
     </div>
-
-    <!-- Mobile Menu -->
-    <div *ngIf="isMobileMenuOpen" class="md:hidden bg-gray-800 text-center py-4">
-        <a routerLink="/" class="block py-2 text-white hover:text-gray-400">Home</a>
-        <a routerLink="/templates" class="block py-2 text-white hover:text-gray-400">Templates</a>
-        <a routerLink="/resume-builder" class="block py-2 text-white hover:text-gray-400">Resume Builder</a>
-        <a routerLink="/card-builder" class="block py-2 text-white hover:text-gray-400">Card Builder</a>
-    </div>
-
-  </header>
-  <div>
-    <router-outlet></router-outlet>
   </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden bg-gray-100 shadow-md text-center py-4 transition-all duration-300">
+    <a routerLink="/" class="block py-2 text-gray-800 hover:text-gray-500 transition-all duration-300">Home</a>
+    <a routerLink="/resume-builder" class="block py-2 text-gray-800 hover:text-gray-500 transition-all duration-300">Resume Builder</a>
+    <a routerLink="/card-builder" class="block py-2 text-gray-800 hover:text-gray-500 transition-all duration-300">Card Builder</a>
+  </div>
+</header>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
